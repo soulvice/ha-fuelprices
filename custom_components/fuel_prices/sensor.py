@@ -106,7 +106,7 @@ class FuelStationTracker(FuelStationEntity, SensorEntity):
     @property
     def name(self) -> str:
         """Return the name of the entity."""
-        return self._fuel_station.name
+        return f"fuel_{self._fuel_station.name}"
 
     @property
     def native_unit_of_measurement(self) -> str:
@@ -180,7 +180,7 @@ class CheapestFuelSensor(CheapestFuelEntity, SensorEntity):
     @property
     def name(self) -> str:
         """Name of the entity."""
-        return f"{self._area} cheapest {self._fuel} {self._count}"
+        return f"fuel_{self._area} cheapest {self._fuel} {self._count}"
 
     @property
     def native_unit_of_measurement(self) -> str:
